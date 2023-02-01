@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol RMCharacterListViewDelegate: AnyObject {
+    func rmCharacterListView(_ characterListView: RMCharacterListView, didselectCharacter charecter: RMCharacter)
+}
+
 class RMCharacterListView: UIView {
     
     private let viewModel = RMCharacterListViewViewModel()
+    public weak var delegate: RMCharacterListViewDelegate?
     
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)
@@ -21,7 +26,7 @@ class RMCharacterListView: UIView {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.isHidden = true
         collectionView.alpha = 0
@@ -76,5 +81,9 @@ extension RMCharacterListView: RMCharacterListViewViewModelDelegate {
         UIView.animate(withDuration: 0.4, animations: {
             self.collectionView.alpha = 1
         })
+    }
+    
+    func didSelectChareacter(_ character: RMCharacter) {
+        delegate?.rmCharacterListView(self, didselectCharacter: character)
     }
 }
