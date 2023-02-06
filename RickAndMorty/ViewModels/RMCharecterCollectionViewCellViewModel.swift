@@ -38,15 +38,6 @@ class RMCharecterCollectionViewCellViewModel: Hashable, Equatable {
             complition(.failure(URLError(.badURL)))
             return
         }
-        
-        let request = URLRequest(url: characterImageUrl)
-        let task = URLSession.shared.dataTask(with: request) { data, _, error in
-            guard let data = data, error == nil  else {
-                complition(.failure(URLError(.badServerResponse)))
-                return
-            }
-            complition(.success(data))
-        }
-        task.resume()
+        RMImageLoader.shared.downloadImage(characterImageUrl, complition: complition)
     }
 }

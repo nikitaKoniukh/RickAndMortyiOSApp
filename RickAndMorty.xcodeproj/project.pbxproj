@@ -36,6 +36,7 @@
 		CA7A58AE29880F390010084E /* RMCharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A58AD29880F390010084E /* RMCharacterStatus.swift */; };
 		CA7A58B029880F6C0010084E /* RMCharachterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A58AF29880F6C0010084E /* RMCharachterGender.swift */; };
 		CA7A58B429881F960010084E /* RMGetCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A58B329881F960010084E /* RMGetCharactersResponse.swift */; };
+		CAF477AA299143CE003CD299 /* RMImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF477A9299143CE003CD299 /* RMImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		CA7A58AD29880F390010084E /* RMCharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterStatus.swift; sourceTree = "<group>"; };
 		CA7A58AF29880F6C0010084E /* RMCharachterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharachterGender.swift; sourceTree = "<group>"; };
 		CA7A58B329881F960010084E /* RMGetCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetCharactersResponse.swift; sourceTree = "<group>"; };
+		CAF477A9299143CE003CD299 /* RMImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		CA4AAF2929801D3E0070469F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CAF477A9299143CE003CD299 /* RMImageLoader.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				CA4AAF3729801E8A0070469F /* RMEpisodeViewController.swift in Sources */,
 				CA5FCA1A298AA0AF001A5318 /* RMCharacterDetailsViewViewModel.swift in Sources */,
 				CA5FCA1129896156001A5318 /* RMCharacterCollectionViewCell.swift in Sources */,
+				CAF477AA299143CE003CD299 /* RMImageLoader.swift in Sources */,
 				CA4AAF1129801B920070469F /* AppDelegate.swift in Sources */,
 				CA4AAF1329801B920070469F /* SceneDelegate.swift in Sources */,
 				CA5FCA132989627E001A5318 /* RMCharecterCollectionViewCellViewModel.swift in Sources */,
