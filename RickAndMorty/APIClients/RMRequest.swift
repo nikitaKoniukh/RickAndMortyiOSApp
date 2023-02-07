@@ -63,8 +63,13 @@ final class RMRequest {
             let components = trimmed.components(separatedBy: "/")
             if !components.isEmpty {
                 let endpointString = components[0]
+                var pathComponents = [String]()
+                if components.count > 1 {
+                    pathComponents = components
+                    pathComponents.removeFirst()
+                }
                 if let rmEndpoint = RMEndPoint(rawValue: endpointString) {
-                    self.init(endpoint: rmEndpoint)
+                    self.init(endpoint: rmEndpoint, pathComponents: pathComponents)
                     return
                 }
             }
@@ -94,4 +99,5 @@ final class RMRequest {
 
 extension RMRequest {
     static let listCharacters = RMRequest(endpoint: .character)
+    static let character = RMRequest(endpoint: .character, pathComponents: ["1"])
 }
