@@ -211,8 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				CA5FCA17298AA091001A5318 /* RMCharacterDetailsView.swift */,
-				CA576C2A2992A77B00601F90 /* RMCharacterInfoCollectionViewCell.swift */,
 				CA576C282992A76D00601F90 /* RMCharacterPhotoCollectionViewCell.swift */,
+				CA576C2A2992A77B00601F90 /* RMCharacterInfoCollectionViewCell.swift */,
 				CA576C2D2992A79900601F90 /* RMCharacterEpisodeCollectionViewCell.swift */,
 			);
 			path = CharacterDetails;
@@ -231,8 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				CA5FCA19298AA0AF001A5318 /* RMCharacterDetailsViewViewModel.swift */,
-				CA576C312992A7F200601F90 /* RMCharacterInfoCollectionViewCellViewModel.swift */,
 				CA576C332992A80100601F90 /* RMCharacterPhotoCollectionViewCellViewModel.swift */,
+				CA576C312992A7F200601F90 /* RMCharacterInfoCollectionViewCellViewModel.swift */,
 				CA576C352992A81000601F90 /* RMCharacterEpisodeCollectionViewCellViewModel.swift */,
 			);
 			path = CharacterDetails;
