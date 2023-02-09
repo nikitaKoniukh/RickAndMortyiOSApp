@@ -10,10 +10,10 @@ import UIKit
 final class RMCharacterEpisodeCollectionViewCell: UICollectionViewCell {
     static let cellIdentifier = "RMCharacterEpisodeCollectionViewCell"
     
-    private var viewModel: RMCharacterEpisodeCollectionViewCellViewModel?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        contentView.backgroundColor = .systemBlue
+        contentView.layer.cornerRadius = 8
     }
     
     required init?(coder: NSCoder) {
@@ -29,6 +29,10 @@ final class RMCharacterEpisodeCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with viewModel: RMCharacterEpisodeCollectionViewCellViewModel) {
-        self.viewModel = viewModel
+        viewModel.registerForDate { data in
+            print(String(describing: data))
+        }
+        viewModel.fetchEpisode()
+        
     }
 }
