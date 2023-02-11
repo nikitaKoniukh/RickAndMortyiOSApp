@@ -17,6 +17,9 @@ class RMCharacterDetailsViewViewModel {
     }
     
     public var sections = [SectionType]()
+    public var episodes: [String] {
+        return character.episode
+    }
     
     init(character: RMCharacter) {
         self.character = character
@@ -91,7 +94,7 @@ class RMCharacterDetailsViewViewModel {
                                                     .fractionalWidth(1.0), heightDimension:
                                                     .fractionalHeight(1.0)))
         
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 2, bottom: 10, trailing: 2)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 2, bottom: 10, trailing: 2)
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize:
                                                         NSCollectionLayoutSize(widthDimension:

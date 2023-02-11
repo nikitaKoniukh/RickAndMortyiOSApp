@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RMEndPoint: String {
+enum RMEndPoint: String, CaseIterable, Hashable {
     case character = "character"
     case location
     case episode

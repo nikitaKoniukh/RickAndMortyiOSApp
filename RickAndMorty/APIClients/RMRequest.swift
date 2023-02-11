@@ -12,11 +12,11 @@ final class RMRequest {
         static let baseUrl = "https://rickandmortyapi.com/api"
     }
     
-    private let endpoint: RMEndPoint
+    public let endpoint: RMEndPoint
     private let pathComponents: [String]
     private let queryParameters: [URLQueryItem]
     
-    private var urlString: String {
+    public var urlString: String {
         var string = Constants.baseUrl
         string += "/"
         string += endpoint.rawValue
