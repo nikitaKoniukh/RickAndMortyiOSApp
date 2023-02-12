@@ -13,7 +13,7 @@ final class RMEpisodeDetailViewController: UIViewController {
     private let detailView = RMEpisodeDetailView()
     
     init(url: URL?) {
-        self.viewModel = .init(endPointUrl: url)
+        self.viewModel = RMEpisodeDetailViewViewModel(endPointUrl: url)
         super.init(nibName: nil, bundle: nil)
         
     }
@@ -27,6 +27,9 @@ final class RMEpisodeDetailViewController: UIViewController {
         setupView()
         title = "Episode"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapShare))
+        
+        viewModel?.delegate = self
+        viewModel?.fetchEpisodeData()
     }
     
     fileprivate func setupView() {
@@ -43,5 +46,11 @@ final class RMEpisodeDetailViewController: UIViewController {
     @objc
     private func didTapShare() {
         
+    }
+}
+
+extension RMEpisodeDetailViewController: RMEpisodeDetailViewViewModelDelegate {
+    func didFetchEpisodeDetails() {
+        detailView.configure(with: viewModel)
     }
 }
