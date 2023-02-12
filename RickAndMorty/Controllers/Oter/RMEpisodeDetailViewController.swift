@@ -10,10 +10,12 @@ import UIKit
 final class RMEpisodeDetailViewController: UIViewController {
 
     private let viewModel: RMEpisodeDetailViewViewModel?
+    private let detailView = RMEpisodeDetailView()
     
     init(url: URL?) {
-        self.viewModel = RMEpisodeDetailViewViewModel(endPointUrl: url)
+        self.viewModel = .init(endPointUrl: url)
         super.init(nibName: nil, bundle: nil)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -22,7 +24,24 @@ final class RMEpisodeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         title = "Episode"
-        view.backgroundColor = .systemGreen
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapShare))
+    }
+    
+    fileprivate func setupView() {
+        view.backgroundColor = .systemBackground
+        view.addSubview(detailView)
+        NSLayoutConstraint.activate([
+            detailView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            detailView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            detailView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            detailView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
+        ])
+    }
+    
+    @objc
+    private func didTapShare() {
+        
     }
 }

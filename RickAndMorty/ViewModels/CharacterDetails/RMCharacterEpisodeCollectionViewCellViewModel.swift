@@ -5,7 +5,7 @@
 //  Created by Nikita Koniukh on 07/02/2023.
 //
 
-import Foundation
+import UIKit
 
 protocol RMEpisodeDataRender {
     var name: String { get }
@@ -18,6 +18,7 @@ final class RMCharacterEpisodeCollectionViewCellViewModel: Hashable, Equatable {
     private let episodeDataUrl: URL?
     private var isFetching = false
     private var dataBlock: ((RMEpisodeDataRender) -> Void)?
+    public var borderColor: UIColor
     
     private var episode: RMEpisode? {
         didSet {
@@ -28,8 +29,9 @@ final class RMCharacterEpisodeCollectionViewCellViewModel: Hashable, Equatable {
         }
     }
     
-    init(episodeDataUrl: URL?) {
+    init(episodeDataUrl: URL?, borderColor: UIColor = .systemBlue) {
         self.episodeDataUrl = episodeDataUrl
+        self.borderColor = borderColor
     }
     
     public func registerForDate(_ block: @escaping(RMEpisodeDataRender) -> Void) {
